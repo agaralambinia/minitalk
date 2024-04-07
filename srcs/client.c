@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/07 11:51:48 by defimova          #+#    #+#             */
+/*   Updated: 2024/04/07 11:51:50 by defimova         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/minitalk.h"
 
 void	send_binary(char *message, int pidid)
@@ -21,7 +33,7 @@ void	send_binary(char *message, int pidid)
 			else
 				kill(pidid, SIGUSR2);
 			power /= 2;
-			usleep(500);
+			usleep(200);
 		}
 		i++;
 	}

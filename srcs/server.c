@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/07 11:52:13 by defimova          #+#    #+#             */
+/*   Updated: 2024/04/07 11:52:15 by defimova         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/minitalk.h"
 
 void	bin_to_char(char *binchar)
@@ -41,7 +53,7 @@ void	sig_to_bin(int sigusrid)
 	}
 }
 
-int	main()
+int	main(void)
 {
 	ft_printf("%i\n", getpid());
 	signal(SIGUSR1, sig_to_bin);

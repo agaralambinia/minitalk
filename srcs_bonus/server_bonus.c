@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: defimova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/07 11:53:06 by defimova          #+#    #+#             */
+/*   Updated: 2024/04/07 11:53:08 by defimova         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/minitalk.h"
 
-static int	clid;
+static int	g_clid;
 
 void	eofbyte(unsigned int *power, int *result, int *bit)
 {
@@ -20,7 +32,7 @@ void	eofbyte(unsigned int *power, int *result, int *bit)
 
 void	eofclid(int *result, unsigned int *power)
 {
-	clid = *result;
+	g_clid = *result;
 	*result = 0;
 	*power = 128;
 }
@@ -45,14 +57,14 @@ void	sig_to_bin(int sigusrid)
 		if (sigusrid == SIGUSR1)
 			result += power;
 		power /= 2;
-		kill(clid, SIGUSR1);
+		kill(g_clid, SIGUSR1);
 	}
 	bit++;
 	if (bit == 40)
 		eofbyte(&power, &result, &bit);
 }
 
-int	main()
+int	main(void)
 {
 	ft_printf("%i\n", getpid());
 	signal(SIGUSR1, sig_to_bin);
