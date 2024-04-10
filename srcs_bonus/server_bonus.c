@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minitalk.h"
+#include "../incs/minitalk_bonus.h"
 
 static int	g_clid;
 

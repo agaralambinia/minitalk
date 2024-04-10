@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minitalk.h"
+#include "../incs/minitalk_bonus.h"
 
 void	info_func(int sigusrid)
 {
